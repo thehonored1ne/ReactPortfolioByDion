@@ -14,9 +14,9 @@
 }
 
 html, body {
-  cursor: url('/public/arrow.cur'), auto;
+  cursor: url('/public/Normal.cur'), auto;
 }
 
-button, a, .cursor-pointer {
-  cursor: url('/public/arrow.cur'), pointer;
+.cursor-pointer {
+  cursor: url('/public/Help Select 2.cur'), pointer;
 }

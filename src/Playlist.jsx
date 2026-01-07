@@ -1,15 +1,15 @@
-    import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 
-    const playlist = [
-    { id: 0, title: "As The World Caves In", artist: "Matt Maltese", src: "/music/music1.mp3", cover: "/cover/CoverAsTheWorldCavesIn.png" },
-    { id: 1, title: "It Will Rain", artist: "Bruno Mars", src: "/music/music3.mp3", cover: "/cover/CoverItWillRain.png" },
-    { id: 2, title: "Pagsuko", artist: "Jireh Lim", src: "/music/music2.mp3", cover: "/cover/CoverPagsuko.jpg" },
-    { id: 3, title: "Running", artist: "Gaho", src: "/music/music4.mp3", cover: "/cover/CoverRunning.jpg" },
-    { id: 4, title: "Slip Away", artist: "Johnny Valentine", src: "/music/music5.mp3", cover: "/cover/CoverSlipAway.jpg" },
-    { id: 5, title: "Dramaturgy", artist: "Eve", src: "/music/music6.mp3", cover: "/cover/CoverDramaturgy.jpg" },
-    ];
+const playlist = [
+    { id: 0, title: "As The World Caves In", artist: "Matt Maltese", src: "/music/AsTheWorldCavesIn.mp3", cover: "/cover/CoverAsTheWorldCavesIn.png" },
+    { id: 1, title: "It Will Rain", artist: "Bruno Mars", src: "/music/ItWillRain.mp3", cover: "/cover/CoverItWillRain.png" },
+    { id: 2, title: "Pagsuko", artist: "Jireh Lim", src: "/music/Pagsuko.mp3", cover: "/cover/CoverPagsuko.jpg" },
+    { id: 3, title: "Running", artist: "Gaho", src: "/music/Running.mp3", cover: "/cover/CoverRunning.jpg" },
+    { id: 4, title: "Slip Away", artist: "Johnny Valentine", src: "/music/SlipAway.mp3", cover: "/cover/CoverSlipAway.jpg" },
+    { id: 5, title: "Dramaturgy", artist: "Eve", src: "/music/Dramaturgy.mp3", cover: "/cover/CoverDramaturgy.jpg" },
+];
 
-    const MusicPlayer = () => {
+const MusicPlayer = () => {
     const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
@@ -18,7 +18,6 @@
 
     const currentTrack = playlist[currentTrackIndex];
 
-    // Update progress bar
     const handleTimeUpdate = () => {
         setProgress(audioRef.current.currentTime);
     };
@@ -35,12 +34,12 @@
 
     const togglePlay = () => {
         if (isPlaying) {
-        audioRef.current.pause();
+            audioRef.current.pause();
         } else {
-        audioRef.current.play();
+            audioRef.current.play();
         }
-        setIsPlaying(!isPlaying);
-    };
+            setIsPlaying(!isPlaying);
+        };
 
     const skipTrack = (direction) => {
         let nextIndex = direction === 'next' ? currentTrackIndex + 1 : currentTrackIndex - 1;
@@ -50,57 +49,69 @@
         setIsPlaying(false);
     };
 
+    const formatTime = (time) => {
+        if (!time) return "0:00";
+        const minutes = Math.floor(time / 60);
+        const seconds = Math.floor(time % 60);
+        return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    };
+
     return (
         <div>
 
             <div style={{ padding: '10px' }}>
-                {/* Album Art & Track Info */}
-                <div style={win95Styles.screen}>
-                <img src={currentTrack.cover} alt="art" style={win95Styles.art} />
-                <div style={{ overflow: 'hidden' }}>
-                    <div style={win95Styles.scrollingText}>{currentTrack.title} - {currentTrack.artist}</div>
-                </div>
+
+                <div className="flex flex-col justify-center items-center font-mono">
+                    <img src={currentTrack.cover} alt="art" className="size-70 rounded-md my-2 border-2 border-t-white border-l-white"/>
+                    <h1 className="font-bold text-2xl my-2">{currentTrack.title}</h1>
+                    <h3 className="text-xl text-gray-700">{currentTrack.artist}</h3>
                 </div>
 
-                {/* Progress Bar */}
                 <div style={{ margin: '10px 0' }}>
-                <input 
-                    type="range" 
-                    min="0" 
-                    max={duration || 0} 
-                    value={progress} 
-                    onChange={handleSeek} 
-                    style={win95Styles.range}
-                />
+                    <input 
+                        type="range" 
+                        min="0" 
+                        max={duration || 0} 
+                        value={progress} 
+                        onChange={handleSeek} 
+                        style={win95Styles.range}
+                    />
                 </div>
 
-                {/* Controls */}
+                <div className="flex justify-between my-2 font-bold">
+                    <span>{formatTime(progress)}</span>
+                    <span>{formatTime(duration)}</span>
+                </div>
+
                 <div style={{ display: 'flex', gap: '4px', marginBottom: '10px' }}>
-                <button onClick={() => skipTrack('prev')} style={win95Styles.button}>Prev</button>
-                <button onClick={togglePlay} style={win95Styles.button}>
-                    {isPlaying ? 'Stop' : 'Play'}
-                </button>
-                <button onClick={() => skipTrack('next')} style={win95Styles.button}>Next</button>
+                    <button onClick={() => skipTrack('prev')} style={win95Styles.button}> Prev</button>
+                    <button onClick={togglePlay} style={win95Styles.button}>
+                        {isPlaying ? 'Stop' : 'Play'}
+                    </button>
+                    <button onClick={() => skipTrack('next')} style={win95Styles.button}>Next </button>
                 </div>
 
-                {/* Scrollable Song List */}
                 <div style={win95Styles.playlistBox}>
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                        {playlist.map((track, index) => (
+                        { playlist.map((track, index) => (
                             <li 
                                 key={track.id} 
                                 onClick={() => { setCurrentTrackIndex(index); setIsPlaying(false); }}
-                                style={{ 
-                                ...win95Styles.listItem, 
-                                backgroundColor: index === currentTrackIndex ? '#000080' : 'transparent',
-                                color: index === currentTrackIndex ? 'white' : 'black'
-                                }}
+                                style={
+                                    { 
+                                        ...win95Styles.listItem, 
+                                        backgroundColor: index === currentTrackIndex ? '#000080' : 'transparent',
+                                        color: index === currentTrackIndex ? 'white' : 'black',
+                                        padding: '6px'
+                                    }
+                                }
                             >
                                 {index + 1}. {track.title} - {track.artist}
                             </li>
-                        ))}
+                            ))}
                     </ul>
                 </div>
+
             </div>
 
             <audio 
@@ -112,10 +123,9 @@
             />
         </div>
     );
-    };
+};
 
-    // Windows 95 Styling Objects
-    const win95Styles = {
+const win95Styles = {
     container: {
         backgroundColor: '#c0c0c0',
         width: '320px',
@@ -164,8 +174,9 @@
         borderBottomColor: '#404040',
         padding: '4px 10px',
         cursor: 'pointer',
-        fontSize: '12px',
-        flex: 1
+        fontSize: '15px',
+        flex: 1,
+        fontWeight: 'bold'
     },
     range: {
         width: '100%',
@@ -186,6 +197,6 @@
         overflow: 'hidden',
         textOverflow: 'ellipsis'
     }
-    };
+};
 
-    export default MusicPlayer;
+export default MusicPlayer;

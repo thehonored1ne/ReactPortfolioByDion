@@ -13,5 +13,6 @@ export const FileIcons = {
     tiktokIcon: "https://cdn.worldvectorlogo.com/logos/tiktok-icon-black-1-1--1.svg",
     menuIcon1: "https://win98icons.alexmeub.com/icons/png/directory_closed-0.png",
     menuIcon2: "https://win98icons.alexmeub.com/icons/png/directory_closed-0.png",
-    menuIcon3: "https://win98icons.alexmeub.com/icons/png/ms_dos-0.png"
+    menuIcon3: "https://win98icons.alexmeub.com/icons/png/ms_dos-0.png",
+    resume:"https://win98icons.alexmeub.com/icons/png/file_lines-0.png"
 }
