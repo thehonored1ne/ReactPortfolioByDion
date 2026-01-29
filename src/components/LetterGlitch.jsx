@@ -272,7 +272,7 @@ const LetterGlitch = ({
             </p>
           )}
 
-          <button type="submit" className="btn btn-outline btn-success font-mono mt-4" disabled={isLoading}>
+          <button type="submit" className="btn btn-outline btn-success font-mono mt-4 " disabled={isLoading}>
             {isLoading ? "AUTHENTICATING..." : "LOGIN"}
           </button>
         </form>

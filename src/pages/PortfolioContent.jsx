@@ -60,7 +60,7 @@ function Content({ openModals, handleOpen, handleClose, focusedModal, setFocused
                 setFocusedModal={setFocusedModal}
                 title={aboutme}
                 className="min-h-150 max-h-130 md:w-120 mx-4"
-                defaultPosition={{ x: 50, y: 50 }}
+                defaultPosition={{ x: 0, y: 20 }}
                 modalId={modalName.AboutMeModal}
             >
 
@@ -95,7 +95,7 @@ function Content({ openModals, handleOpen, handleClose, focusedModal, setFocused
                 focusedModal={focusedModal}
                 setFocusedModal={setFocusedModal}
                 title="Experiences" 
-                defaultPosition={{ x: 100, y: 100 }}
+                defaultPosition={{ x: 0, y: 50 }}
                 modalId={modalName.ExperienceModal}
                 className="min-h-150 max-h-130 md:w-120 mx-4"
             >
@@ -109,7 +109,7 @@ function Content({ openModals, handleOpen, handleClose, focusedModal, setFocused
                 focusedModal={focusedModal}
                 setFocusedModal={setFocusedModal}
                 title="Education" 
-                defaultPosition={{ x: 150, y: 150 }}
+                defaultPosition={{ x: 0, y: 80 }}
                 modalId={modalName.EducationModal}
                 className=" mx-4"
             >
@@ -124,7 +124,7 @@ function Content({ openModals, handleOpen, handleClose, focusedModal, setFocused
                 focusedModal={focusedModal}
                 setFocusedModal={setFocusedModal}
                 title={projects} 
-                defaultPosition={{ x: 200, y: 80 }}
+                defaultPosition={{ x: 0, y: 80 }}
                 modalId={modalName.ProjectModal}
                 className=" mx-4"
             >
@@ -138,7 +138,7 @@ function Content({ openModals, handleOpen, handleClose, focusedModal, setFocused
                 focusedModal={focusedModal}
                 setFocusedModal={setFocusedModal}
                 title={portfolio} 
-                defaultPosition={{ x: 200, y: 80 }}
+                defaultPosition={{ x: 0, y: 80 }}
                 modalId={modalName.PortfolioModal}
                 className=" mx-4"
             >
@@ -152,7 +152,7 @@ function Content({ openModals, handleOpen, handleClose, focusedModal, setFocused
                 focusedModal={focusedModal}
                 setFocusedModal={setFocusedModal}
                 title={contact} 
-                defaultPosition={{ x: 200, y: 80 }}
+                defaultPosition={{ x: 0, y: 80 }}
                 modalId={modalName.ContactModal}
                 className="mx-4"
             >
@@ -168,7 +168,7 @@ function Content({ openModals, handleOpen, handleClose, focusedModal, setFocused
                 focusedModal={focusedModal}
                 setFocusedModal={setFocusedModal}
                 title={computer}
-                defaultPosition={{ x: 200, y: 80 }}
+                defaultPosition={{ x: 0, y: 80 }}
                 modalId={modalName.ComputerModal}
                 className=" mx-4"
             >
@@ -189,7 +189,7 @@ function Content({ openModals, handleOpen, handleClose, focusedModal, setFocused
                 focusedModal={focusedModal}
                 setFocusedModal={setFocusedModal}
                 title={playlist}
-                defaultPosition={{ x: 200, y: 150 }}
+                defaultPosition={{ x: 0, y: 80 }}
                 modalId={modalName.PlaylistModal}
                 className=" mx-4 w-full h-170"
             >
@@ -203,7 +203,7 @@ function Content({ openModals, handleOpen, handleClose, focusedModal, setFocused
                 focusedModal={focusedModal}
                 setFocusedModal={setFocusedModal}
                 title={socials} 
-                defaultPosition={{ x: 200, y: 80 }}
+                defaultPosition={{ x: 0, y: 80 }}
                 modalId={modalName.SocialModal}
                 className=" mx-4"
             >
@@ -221,7 +221,7 @@ function Content({ openModals, handleOpen, handleClose, focusedModal, setFocused
                 focusedModal={focusedModal}
                 setFocusedModal={setFocusedModal}
                 title={tictactoe} 
-                defaultPosition={{ x: 200, y: 80 }}
+                defaultPosition={{ x: 0, y: 80 }}
                 modalId={modalName.TicTactoeModal}
                 className=" mx-4"
             >
@@ -235,7 +235,7 @@ function Content({ openModals, handleOpen, handleClose, focusedModal, setFocused
                 focusedModal={focusedModal}
                 setFocusedModal={setFocusedModal}
                 title={memorymatch} 
-                defaultPosition={{ x: 200, y: 80 }}
+                defaultPosition={{ x: 0, y: 80 }}
                 modalId={modalName.MemoryMatch}
                 className=" mx-4"
             >

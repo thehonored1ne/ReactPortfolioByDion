@@ -95,7 +95,7 @@ const MemoryGame = () => {
 
       {matchedCount === initialIcons.length && (
         <div className="mt-6 text-xl font-bold text-yellow-400 animate-bounce">
-          SYSTEM UNLOCKED!
+          VICTORY!
         </div>
       )}
     </div>
