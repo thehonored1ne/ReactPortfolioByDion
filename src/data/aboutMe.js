@@ -10,5 +10,9 @@ export const AboutMe = {
         "experience content goes here...",
 
     education: 
-        "education content goes here..."
+        "education content goes here...",
+    elementary: "Andres Bonifacio Elementary School",
+    highschool: "Potrero National High School",
+    seniorhigh: "AMA Computer College Caloocan",
+    college: "Latest: Global Reciprocal College"
 }
