@@ -20,9 +20,9 @@ function Content({ openModals, handleOpen, handleClose, focusedModal, setFocused
     return (
         <div className="relative flex grow flex-col bg-cover h-screen w-full md:h-[calc(100vh-60px)] bg-no-repeat bg-center bg-[url('/backgrounds/bgs1.png')]">
 
-                <button type='button' onClick={logout} className="absolute bottom-0 left-0 md:hidden m-4 text-xl cursor-pointer"><FontAwesomeIcon icon={faRightFromBracket} /></button>
+                <button type='button' onClick={logout} className="absolute bottom-12 left-0 md:hidden m-4 text-xl cursor-pointer"><FontAwesomeIcon icon={faRightFromBracket} /></button>
 
-                <div className="absolute bottom-0 right-0 m-4 font-bold backdrop-blur-sm rounded md:hidden"><DigitalClock /></div>
+                <div className="absolute bottom-12 right-0 m-4 font-bold backdrop-blur-sm rounded md:hidden"><DigitalClock /></div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 md:grid-rows-5 lg:grid-cols-10 lg:grid-rows-5 gap-2 p-4 text-white font-bold font-serif">
 
