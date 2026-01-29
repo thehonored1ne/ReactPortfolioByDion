@@ -233,12 +233,12 @@ const LetterGlitch = ({
     <div className="relative w-full h-screen bg-black overflow-hidden">
       <canvas ref={canvasRef} className="block w-full h-screen" />
       {outerVignette && (
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none bg-[radial-gradient(circle,_rgba(0,0,0,0)_60%,_rgba(0,0,0,1)_100%)]"></div>
+        <div className="absolute top-0 left-0 w-full h-screen pointer-events-none bg-[radial-gradient(circle,_rgba(0,0,0,0)_60%,_rgba(0,0,0,1)_100%)]"></div>
       )}
       {centerVignette && (
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none bg-[radial-gradient(circle,_rgba(0,0,0,0.8)_0%,_rgba(0,0,0,0)_60%)]"></div>
+        <div className="absolute top-0 left-0 w-full h-screen pointer-events-none bg-[radial-gradient(circle,_rgba(0,0,0,0.8)_0%,_rgba(0,0,0,0)_60%)]"></div>
       )}
-      <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center">
+      <div className="absolute top-0 left-0 w-full h-screen flex flex-col items-center justify-center">
         <div className="avatar my-5">
             <div className="ring-primary ring-offset-base-100 w-16 md:w-32 rounded-full ring-2 ring-offset-2">
                 <img src="https://lh3.googleusercontent.com/a/ACg8ocIjC5aBPdnAqKTT7ma87HW2kX_WCH23WFfEevdDvuuqVASOyu-z=s288-c-no" />
